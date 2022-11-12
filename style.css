@@ -183,7 +183,6 @@ input[type=text], select, textarea {
     resize: vertical
 }
 
-
 input[type=email], select, textarea {
     width: 100%;
     padding: 12px;
@@ -195,7 +194,6 @@ input[type=email], select, textarea {
     resize: vertical
 }
 
-
 input[type=submit] {
     color: white;
     padding: 12px 20px;
@@ -204,14 +202,12 @@ input[type=submit] {
     cursor: pointer;
 }
 
-
 .container-input {
     border-radius: 5px;
     padding: 20px;
     font-family: monospace;
     font-size: 16px;
 }
-
 
 div.form  {
     display: block;
