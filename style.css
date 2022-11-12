@@ -152,6 +152,11 @@ footer {
     color: white;
 }
 
+div.button.timetable {
+    display: inline;
+
+}
+
 div.bottom-button {
     text-align: center;
     margin-top: 2rem;
@@ -165,6 +170,10 @@ div.bottom-button {
 
 .logo {
     width: 6rem;
+}
+
+#table-top, #table-bottom {
+    display: none;
 }
 
 a.select {

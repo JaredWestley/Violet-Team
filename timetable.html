@@ -31,10 +31,12 @@
     </header>
 
     <main>
+
         <div class="table">
-            <h1 style="text-align: center;">D-Y Timetable</h1>
-            <br>
-            <table border="5" cellspacing="0" align="center">
+
+            <div class="button timetable" id="time-top">D-Y Timetable</div>
+
+            <table border="5" cellspacing="0" align="center" id="table-top">
                 <!--<caption>Timetable</caption>-->
                 <tr>
                     <td align="center" height="50" width="150"><br>
@@ -121,14 +123,12 @@
                 </tr>
             </table>
         </div>
-        <br>
-
-
 
         <div class="table">
-            <h1 style="text-align: center;">D-X Timetable</h1>
-            <br>
-            <table border="5" cellspacing="0" align="center">
+
+            <div class="button timetable" id="time-bottom">D-X Timetable</div>
+
+            <table border="5" cellspacing="0" align="center" id="table-bottom">
                 <!--<caption>Timetable</caption>-->
                 <tr>
                     <td align="center" height="50" width="150"><br>
@@ -231,6 +231,53 @@
     <h2>Violet Team</h2>
     <p><a class="select" href="mailto:violet.team@mycit.ie">violet.team@mycit.ie</a></p>
 </footer>
+
+<script>
+
+    // Create buttons and reference data
+    const buttonShow = {
+        "time-top": "table-top",
+        "time-bottom": "table-bottom"
+    };
+
+    // Fade functions
+    function fade(element) {
+        let op = 1;  // Initial opacity
+        let timer = setInterval(function () {
+            if (op <= 0.1) {
+                clearInterval(timer);
+                element.style.display = "none";
+            }
+            element.style.opacity = op;
+            element.style.filter = `alpha(opacity=${op * 100})`;
+            op -= op * 0.1;
+        }, 10);
+    }
+    function unfade(element) {
+        let op = 0.1;  // Initial opacity
+        element.style.display = "block";
+        let timer = setInterval(function () {
+            if (op >= 1) clearInterval(timer);
+            element.style.opacity = op;
+            element.style.filter = `alpha(opacity=${op * 100})`;
+            op += op * 0.1;
+        }, 10);
+    }
+
+    // Iterate and attach event listeners
+    for (let key in buttonShow) {
+        let button = document.getElementById(key);
+        let showItem = document.getElementById(buttonShow[key]);
+        // Hide automatically the items
+        showItem.style.display = "none";
+        // Add an event listener to the chosen button
+        button.addEventListener("click", () => {
+            if (showItem.style.display === "none") unfade(showItem);
+            else fade(showItem);
+        })
+    }
+
+</script>
 
 </body>
 </html>
