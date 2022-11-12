@@ -1,178 +1,174 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="images/violet.png" rel="shortcut icon">
-  <title>Test Website - Contact</title>
+
+    <title>Test Website - Contact</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/violet.png" rel="shortcut icon">
+
 </head>
 
 <body>
 
-  <div class="header">
-    <div style="text-align: center; padding-bottom: 0.5;">
-      <a href="index.html" style="user-select: none;"><img src="images/violet.png" style="width: 5%; height: 5%;"></a>
-      <h1>MTU Timetable</h1>
+    <div id="topper">
+
+        <header>
+            <div id="header-block">
+                <a href="#" class="no-select">
+                    <img class="logo" src="images/violet.png" alt="Team Violet Logo">
+                </a>
+                <h1>MTU Timetable</h1>
+            </div>
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a href="timetable.html">Timetable</a>
+                <a class="active" href="#">Contact</a>
+                <a href="events.html">events</a>
+            </div>
+        </header>
+
+        <main class="block-contact glow">
+            <div class="container-input form">
+                <form name="ContactInfo" id="contactform" onsubmit="required()">
+
+                    <h2 class="rainbow container">Contact Us </h2>
+
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name"><br>
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Enter your last name"><br>
+
+                    <label for="email">Email Address</label><br>
+                    <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" placeholder="Enter your email"><br>
+
+                    <label for="title">Title</label>
+                    <select id="title" name="title">
+                        <option value="" disabled selected>Please choose one..</option>
+                        <option value="mr">Mr</option>
+                        <option value="ms">Ms</option>
+                        <option value="mrs">Mrs</option>
+                        <option value="other">Other</option>
+                    </select><br>
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."></textarea><br>
+
+                    <button type="button" class="button rainbow-small" id="submitButton" value="Submit">Submit</button>
+
+                </form>
+            </div>
+        </main>
+
+        <div id="pusher"></div>
+
     </div>
-    <div class="header-right" style="padding-top: 0%;">
-      <a href="index.html">Home</a>
-      <a href="timetable.html">Timetable</a>
-      <a class="active" href="#contact">Contact</a>
-      <a href="events.html">events</a>
-    </div>
-  </div>
 
-  <div class="block-contact glow">
-    <div class="container-input form">
-      <form name="ContactInfo" id="contactform" onsubmit="required()">
+    <footer>
+        <h2>Violet Team</h2>
+        <p><a class="select" href="mailto:violet.team@mycit.ie">violet.team@mycit.ie</a></p>
+    </footer>
 
-        <h2 class="rainbow container" style="tab-size: 50px;">Contact Us </h2>
+    <script src="lib/firebase-app.js"></script>
+    <script src="lib/firebase-firestore.js"></script>
+    <script type="module">
 
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Enter your first name"><br>
-
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Enter your last name"><br>
-
-        <label for="email">Email Address</label><br>
-        <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" placeholder="Enter your email"><br>
-
-        <label for="title">Title</label>
-        <select id="title" name="title">
-          <option value="" disabled selected>Please choose one..</option>
-          <option value="mr">Mr</option>
-          <option value="ms">Ms</option>
-          <option value="mrs">Mrs</option>
-          <option value="other">Other</option>
-        </select><br>
-
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
-
-        <button type="button" class="button rainbow-small" id="submitButton" value="Submit">Submit</button>
-
-      </form>
-    </div>
-  </div>
-
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
-      <script type="module">
-        var config = {
-          apiKey: "AIzaSyD3Vafq07XrPdcMtMr26MZzPnBWTynLqtg",
-          authDomain: "violet-team.firebaseapp.com",
-          projectId: "violet-team",
-          storageBucket: "violet-team.appspot.com",
-          messagingSenderId: "773458989236",
-          appId: "1:773458989236:web:e472340505f3c50b6d07e1",
-          measurementId: "G-57DLDBZZG7"
+        // API key for firebase
+        const config = {
+            apiKey: "AIzaSyD3Vafq07XrPdcMtMr26MZzPnBWTynLqtg",
+            authDomain: "violet-team.firebaseapp.com",
+            projectId: "violet-team",
+            storageBucket: "violet-team.appspot.com",
+            messagingSenderId: "773458989236",
+            appId: "1:773458989236:web:e472340505f3c50b6d07e1",
+            measurementId: "G-57DLDBZZG7"
         };
-        
-        var app = firebase.initializeApp(config);
+
+        // Initialize firebase
+        let app = firebase.initializeApp(config);
         const db = app.firestore();
 
+        // Get needed fields
         const FirstnameInput = document.querySelector('#fname');
         const LastnameInput = document.querySelector('#lname');
         const EmailInput = document.querySelector('#email');
         const TitleInput = document.querySelector('#title');
         const SubjectInput = document.querySelector('#subject');
+        // Extract values
+        const FirstName = FirstnameInput.value;
+        const LastName = LastnameInput.value;
+        const email = EmailInput.value;
+        const title = TitleInput.value;
+        const subject = SubjectInput.value;
+        // Get submit button
+        const SubmitButton = document.querySelector('#submitButton')
 
-        submitButton.addEventListener("click", function () {
-          {
-            var FirstNameEmpty = document.forms["ContactInfo"]["firstname"].value;
-            var LastNameEmpty = document.forms["ContactInfo"]["lastname"].value;
-            var EmailEmpty = document.forms["ContactInfo"]["email"].value;
-            var TitleEmpty = document.forms["ContactInfo"]["title"].value;
-            var SubjectEmpty = document.forms["ContactInfo"]["subject"].value;
+        // Create event listener for submit button
+        SubmitButton.addEventListener("click", function () {
 
-            if (FirstNameEmpty == "" || FirstNameEmpty == " ") {
-              alert("Please input a value for First Name!");
-              return false;
+            // Get form values
+            let FirstNameEmpty = document.forms["ContactInfo"]["firstname"].value;
+            let LastNameEmpty = document.forms["ContactInfo"]["lastname"].value;
+            let EmailEmpty = document.forms["ContactInfo"]["email"].value;
+            let TitleEmpty = document.forms["ContactInfo"]["title"].value;
+            let SubjectEmpty = document.forms["ContactInfo"]["subject"].value;
+
+            // Create few validation functions
+            function isEmptyOrSpaces(str){
+                return str === null || str.match(/^ *$/) !== null;
             }
-            function hasNumber(StringtoCheck) {
-              return /\d/.test(StringtoCheck);
+            function isValidMail(str) {
+                return /\S+@\S+\.\S+/.test(str);
             }
-            if (hasNumber(FirstNameEmpty) === true) {
-              alert("Please input a valid First Name!");
-              return false;
-            }
-
-
-
-            if (LastNameEmpty == "" || LastNameEmpty == " ") {
-              alert("Please input a value for Last Name!");
-              return false;
-            }
-            if (hasNumber(LastNameEmpty) === true) {
-              alert("Please input a valid Last Name!");
-              return false;
+            function hasNumber(str) {
+                return /\d/.test(str);
             }
 
-
-
-            if (EmailEmpty == "" || EmailEmpty == " ") {
-              alert("Please input a value for Email Address!");
-              return false;
-            }
-            function validMail(EmailEmpty) {
-              return /\S+@\S+\.\S+/.test(EmailEmpty);
-            }
-            if (validMail(EmailEmpty) === false) {
-              alert("Please input a valid Email Address!");
-              return false;
-            }
-
-
-            if (TitleEmpty == "" || TitleEmpty == " ") {
-              alert("Please input a value for Title!");
-              return false;
-            }
-
-            if (SubjectEmpty == "" || SubjectEmpty == " ") {
-              alert("Please input a value for Subject!");
-              return false;
-            }
-
+            // Conditional checking for errors
+            if (isEmptyOrSpaces(FirstNameEmpty))
+                alert("Please input a value for First Name!");
+            else if (hasNumber(FirstNameEmpty))
+                alert("Please input a valid First Name!");
+            else if (isEmptyOrSpaces(LastNameEmpty))
+                alert("Please input a value for Last Name!");
+            else if (hasNumber(LastNameEmpty))
+                alert("Please input a valid Last Name!");
+            else if (isEmptyOrSpaces(EmailEmpty))
+                alert("Please input a value for Email Address!");
+            else if (!isValidMail(EmailEmpty))
+                alert("Please input a valid Email Address!");
+            else if (isEmptyOrSpaces(TitleEmpty))
+                alert("Please input a value for Title!");
+            else if (isEmptyOrSpaces(SubjectEmpty))
+                alert("Please input a value for Subject!");
             else {
-              console.log("Data input successfully");
+                console.log("Data input successfully");
+
+                // Create collection name
+                const docRef = db.collection("Contact-Form").doc(`${FirstName} ${LastName} : ${email}`);
+
+                // Send data to firebase
+                docRef.set({
+                    Firstname: FirstName,
+                    Lastname: LastName,
+                    Email: email,
+                    Title: title,
+                    Subject: subject
+                }).then(function () {
+                    console.log("Document written successfully");
+                    alert("Data sent successfully, we will get back to your shortly!");
+                }).catch(function (error) {
+                    console.error("Error adding document: ", error);
+                    alert("Error adding document, please try again later!");
+                });
             }
-          }
 
-          const FirstName = FirstnameInput.value;
-          const LastName = LastnameInput.value;
-          const email = EmailInput.value;
-          const title = TitleInput.value;
-          const subject = SubjectInput.value;
-
-
-          const docRef = db.collection("Contact-Form").doc(FirstName + ' ' + LastName + ' : ' + email);
-
-          docRef.set({
-            Firstname: FirstName,
-            Lastname: LastName,
-            Email: email,
-            Title: title,
-            Subject: subject
-          })
-            .then(function (docRef) {
-              console.log("Document written successfully");
-              alert("Data sent successfully, we will get back to your shortly!");
-            })
-            .catch(function (error) {
-              console.error("Error adding document: ", error);
-              alert("Error adding document, please try again later!");
-            });
         });
 
-
-      </script>
-
-      <footer>
-        <h2 style="text-align: center;">Violet team!</h2>
-        <p style="text-align: center; padding-bottom: 1%;"><a href="mailto:violet.team@mycit.ie"
-            style="cursor: pointer; color: white;">Email us! Violet.team@mycit.ie</a></p>
-      </footer>
+    </script>
 
 </body>
-
 </html>

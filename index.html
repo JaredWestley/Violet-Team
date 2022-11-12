@@ -1,34 +1,47 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="images/violet.png" rel="shortcut icon">
-  <title>Test Website</title>
+
+    <title>Test Website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/violet.png" rel="shortcut icon">
+
 </head>
 
 <body>
 
-  <div class="header">
-    <div  style="text-align: center; padding-bottom: 0.5;">
-      <a href="#" style="user-select: none;"><img src="images/violet.png" style="width: 5%; height: 5%;"></a>
-      <h1>MTU Timetable</h1>
+    <div id="topper">
+
+        <header>
+            <div id="header-block">
+                <a href="#" class="no-select">
+                    <img class="logo" src="images/violet.png" alt="Team Violet Logo">
+                </a>
+                <h1>MTU Timetable</h1>
+            </div>
+            <div class="header-right">
+                <a class="active" href="#">Home</a>
+                <a href="timetable.html">Timetable</a>
+                <a href="contact.html">Contact</a>
+                <a href="events.html">events</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="main">Timetable website</div>
+        </main>
+
+        <div id="pusher"></div>
+
     </div>
-    <div class="header-right">
-      <a class="active" href="#home">Home</a>
-      <a href="timetable.html">Timetable</a>
-      <a href="contact.html">Contact</a>
-      <a href="events.html">events</a>
-    </div>
-  </div>
 
-
-  <footer>
-    <h2 style="text-align: center;">Violet team!</h2>
-    <p style="text-align: center; padding-bottom: 1%;"><a href="mailto:violet.team@mycit.ie"
-        style="cursor: pointer; color: white;">Email us! Violet.team@mycit.ie</a></p>
-  </footer>
-
+    <footer>
+        <h2>Violet Team</h2>
+        <p><a class="select" href="mailto:violet.team@mycit.ie">violet.team@mycit.ie</a></p>
+    </footer>
 
 </body>
-
+</html>
