@@ -152,6 +152,12 @@ footer {
     color: white;
 }
 
+div.bottom-button {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
 .transparent_button {
     background-color: transparent;
     border: 0;
