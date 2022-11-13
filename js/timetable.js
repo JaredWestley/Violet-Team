@@ -125,6 +125,11 @@ function createTable(rows, columns, dataFull, coursesInfo) {
             // Add size to the cell
             rowChild.css("flex-grow", data[eachRow][eachCell][1]);
             if (localData != null) {
+
+                // Fix the class string
+                let matchesClass = /([a-zA-Z.]*) *([\d.]*)/g.exec(localData["class"]);
+                let newClass = `${matchesClass[1].toUpperCase()} ${matchesClass[2]}`
+
                 // Add the info contained in the cell
                 let cell = $("<div>", { class: "cell-inside" });
                 cell.append(...[
@@ -136,9 +141,10 @@ function createTable(rows, columns, dataFull, coursesInfo) {
                         )
                     ),
                     $("<div>", { class: "cell-bottom-filler" }),
-                    $("<div>", { class: "cell-inside-item cell-class inside-corner" }).append(localData["class"])
+                    $("<div>", { class: "cell-inside-item cell-class inside-corner" }).append(newClass)
                 ])
                 rowChild.append(cell);
+
             } else {
                 let cell = $("<div>", { class: "cell-inside empty" });
                 rowChild.append(cell);

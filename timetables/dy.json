@@ -1,7 +1,7 @@
 {
   "table": [
-    [ [null, 4], [{"course": "prog", "class": "B217", "type": "lecture"}, 1], [{"course": "arch", "class": "B217", "type": "lecture"}, 1], [{"course": "math", "class": "B217", "type": "lecture"}, 1], [{"course": "cit", "class": "IT 1.4", "type": "lab"}, 1], [{"course": "prog", "class": "IT 1.4", "type": "lab"}, 1] ],
-    [ [null, 9] ],
+    [ [null, 4], [{"course": "prog", "class": "b217", "type": "lecture"}, 1], [{"course": "arch", "class": "b217", "type": "lecture"}, 1], [{"course": "math", "class": "b217", "type": "lecture"}, 1], [{"course": "cit", "class": "it1.4", "type": "lab"}, 1], [{"course": "prog", "class": "it1.4", "type": "lab"}, 1] ],
+    [ [{"course": "sec", "class": "f1.2", "type": "lecture"}, 1], [{"course": "web", "class": "b217", "type": "lecture"}, 1], [{"course": "sec", "class": "c136", "type": "lab"}, 2], [null, 1], [{"course": "prog", "class": "it1.3", "type": "lab"}, 2], [null, 2] ],
     [ [null, 9] ],
     [ [null, 9] ],
     [ [null, 9] ]
