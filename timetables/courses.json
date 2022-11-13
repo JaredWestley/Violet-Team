@@ -1,0 +1,8 @@
+{
+  "prog": { "name": "Programming Fundamentals", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/12700"},
+  "arch": { "name": "Computer Architecture", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/12620"},
+  "math": { "name": "Maths for Computer Science", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/13749"},
+  "cit": { "name": "C.I.T. (Creativity, Innovation & Teamwork)", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/12199"},
+  "sec": { "name": "Computer Security Principles", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/10830"},
+  "web": { "name": "Web Development Fundamentals", "link": "https://courses.cit.ie/index.cfm/page/module/moduleId/13778"}
+}

@@ -1,0 +1,9 @@
+{
+  "table": [
+    [ [null, 4], [{"course": "prog", "class": "B217", "type": "lecture"}, 1], [{"course": "arch", "class": "B217", "type": "lecture"}, 1], [{"course": "math", "class": "B217", "type": "lecture"}, 1], [{"course": "cit", "class": "IT 1.4", "type": "lab"}, 1], [{"course": "prog", "class": "IT 1.4", "type": "lab"}, 1] ],
+    [ [null, 9] ],
+    [ [null, 9] ],
+    [ [null, 9] ],
+    [ [null, 9] ]
+  ]
+}

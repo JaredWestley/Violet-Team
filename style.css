@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-y: scroll;
+}
+
 html, body {
     height: 100%;
 }
@@ -18,6 +22,10 @@ h2 {
 
 h2.rainbow.container {
     tab-size: 50px;
+}
+
+hr {
+    margin: 1rem 3rem 3rem;
 }
 
 textarea {
@@ -87,6 +95,83 @@ header a.active:hover {
     }
 }
 
+.center-main {
+    text-align: center;
+}
+
+div.custom-table {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    padding: 3rem;
+    font-size: .9rem;
+    font-family: monospace;
+}
+
+div.table-header, div.table-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+div.cell {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+div.cell-inside.empty {
+    background: repeating-linear-gradient(
+        135deg,
+        #c7b2ff,
+        #c7b2ff 2rem,
+        #d4c0ff 2rem,
+        #d4c0ff 4rem
+    );
+}
+
+div.cell-inside {
+    background-color: #c7b2ff;
+    padding: .4rem;
+    margin: .3rem;
+    height: calc(100% - (.3rem * 2));
+    border-radius: .4rem;
+    position: relative;
+}
+div.cell-bottom-filler {
+    height: 2rem;
+}
+div.cell-middle-filler {
+    height: 1rem;
+}
+div.inside-corner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0.5rem;
+}
+
+div.cell-float-inside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.table-header {
+    text-align: center;
+}
+
+div.table-header-child, div.table-header-row, div.table-row-child {
+    display: inline;
+}
+
+div.table-header-row {
+    font-style: italic;
+}
+
 main {
     display: inline;
     min-height: 100%;
@@ -153,8 +238,8 @@ footer {
 }
 
 div.button.timetable {
-    display: inline;
-
+    display: inline-block;
+    margin: 1rem auto;
 }
 
 div.bottom-button {
