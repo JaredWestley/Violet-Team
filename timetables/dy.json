@@ -2,8 +2,8 @@
   "table": [
     [ [null, 4], [{"course": "prog", "class": "B217", "type": "lecture"}, 1], [{"course": "arch", "class": "B217", "type": "lecture"}, 1], [{"course": "math", "class": "B217", "type": "lecture"}, 1], [{"course": "cit", "class": "IT 1.4", "type": "lab"}, 1], [{"course": "prog", "class": "IT 1.4", "type": "lab"}, 1] ],
     [ [{"course": "sec", "class": "F 1.2", "type": "lecture"}, 1], [{"course": "web", "class": "B217", "type": "lecture"}, 1], [{"course": "sec", "class": "C136", "type": "lab"}, 2], [null, 1], [{"course": "prog", "class": "IT 1.3", "type": "lab"}, 2], [null, 2] ],
-    [ [{"course": "cit", "class": "Online", "type": "lecture"}, 2], [{"course": "arch", "class": "B217", "type": "lecture"}, 1], [null, 2], [{"course": "prog", "class": "B219", "type": "lecture"}, 2], [{"course": "math", "class": "F 1.2", "type": "lecture"}, 1], [null, 1] ],
+    [ [{"course": "cit", "class": "Online", "type": "lecture"}, 2], [{"course": "arch", "class": "B217", "type": "lecture"}, 1], [null, 2], [{"course": "prog", "class": "B219", "type": "lecture"}, 1], [{"course": "math", "class": "F 1.2", "type": "lecture"}, 1], [null, 2] ],
     [ [{"course": "web", "class": "B217", "type": "lecture"}, 1], [{"course": "math", "class": "B217", "type": "lecture"}, 1], [{"course": "arch", "class": "C134", "type": "lab"}, 2], [null, 5] ],
-    [ [{"course": "web", "class": "IT 2.3", "type": "lab"}, 2], [{"course": "sec", "class": "F 1.2", "type": "lecture"}, 1], [{"course": "math", "class": "E 4", "type": "lab"}, 2], [null, 4] ]
+    [ [{"course": "web", "class": "IT 2.3", "type": "lab"}, 2], [{"course": "sec", "class": "F 1.2", "type": "lecture"}, 1], [{"course": "math", "class": "E 4", "type": "lab"}, 1], [null, 5] ]
   ]
 }
